@@ -3,7 +3,8 @@
 // La API key vive en una variable de entorno secreta (SENDGRID_API_KEY), NUNCA en el código.
 
 const TO_EMAIL   = "marketing@qualesgroup.com";        // casilla que recibe las consultas
-const FROM_EMAIL = "no-reply@qualesgroup.com";         // remitente verificado en SendGrid
+const CC_EMAILS  = ["agaig@qualesgroup.com", "fmanjarin@qualesgroup.com"]; // en copia
+const FROM_EMAIL = "comunicacion@qualesgroup.com";     // remitente verificado en SendGrid
 const FROM_NAME  = "Landing Plataforma Agéntica - Quales";
 
 export async function onRequestPost({ request, env }) {
@@ -59,6 +60,7 @@ export async function onRequestPost({ request, env }) {
     const payload = {
       personalizations: [{
         to: [{ email: TO_EMAIL }],
+        cc: CC_EMAILS.map((e) => ({ email: e })),
         // reply-to = el email del interesado: al responder, marketing le contesta directo a él
         subject: `Nueva consulta de la landing — ${nombre}`,
       }],
