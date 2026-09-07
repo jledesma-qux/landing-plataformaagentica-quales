@@ -3,7 +3,7 @@
 // La API key vive en una variable de entorno secreta (SENDGRID_API_KEY), NUNCA en el código.
 
 const TO_EMAIL   = "marketing@qualesgroup.com";        // casilla que recibe las consultas
-const CC_EMAILS  = ["agaig@qualesgroup.com", "fmanjarin@qualesgroup.com"]; // en copia
+const CC_EMAILS  = ["agaig@qualesgroup.com", "fmanjarin@qualesgroup.com", "mcabezas@qualesgroup.com"]; // en copia
 const FROM_EMAIL = "comunicacion@qualesgroup.com";     // remitente verificado en SendGrid
 const FROM_NAME  = "Landing Plataforma Agéntica - Quales";
 
